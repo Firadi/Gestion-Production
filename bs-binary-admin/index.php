@@ -1,85 +1,4 @@
-<?php
-session_start();
-include 'connect.php';
-
-// Check if supervisor is logged in
-if (!isset($_SESSION['matricule_person'])) {
-    // Redirect to login page if not logged in
-    header("Location: login.php");
-    exit();
-}
-
-// Function to retrieve personnel hierarchy
-function displayPersonnelHierarchy($personId, $indentation = "")
-{
-    global $conn;
-
-    // Retrieve person details
-    $query = "SELECT * FROM person WHERE matricule_person = $personId";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        
-        $person = $result->fetch_assoc();
-        
-        //get the role name
-        $role = getRoleString($person['role_person']);
-
-        echo '<li>'.$indentation.$person['nom'] . ' ' . $person['prenom'].'('.$role.')'.'</li>';
-        
-        // Retrieve direct reports
-        $query = "SELECT * FROM person WHERE manager_person = $personId ";
-        $result = $conn->query($query);
-        
-        if ($result->num_rows > 0) {
-            echo '<ul class="person-details">';
-            while ($report = $result->fetch_assoc()) {
-
-                // Recursively display the hierarchy for each direct report
-                echo '<li class="indent">';
-                displayPersonnelHierarchy($report['matricule_person'], $indentation . "&nbsp;&nbsp;&nbsp;&nbsp;");
-                echo '</li>';
-            }
-
-            echo '</ul>';
-        }
-    }
-}
-
-// Function to get role string based on role number
-function getRoleString($roleNumber)
-{
-    switch ($roleNumber) {
-        case 1:
-            return 'Opérateur';
-        case 2:
-            return 'Chef';
-        case 3:
-            return 'Superviseur';
-        default:
-            return 'Unknown';
-    }
-}
-
-// Retrieve supervisor's ID from session
-$supervisorId = $_SESSION['matricule_person'];
-
-// Retrieve supervisor's details
-$query = "SELECT * FROM person WHERE matricule_person = $supervisorId";
-$result = $conn->query($query);
-$supervisor = $result->fetch_assoc();
-
-// Display the personnel hierarchy for the supervisor
-echo '<h2>Welcome, ' . $supervisor['nom'] . ' ' . $supervisor['prenom'] . '</h2>';
-echo '<h3>Your Team</h3>';
-echo '<ul>';
-displayPersonnelHierarchy($supervisorId);
-echo '</ul>';
-
-$conn->close();
-?>
-
-
+<?php include 'php/getSV.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,7 +17,7 @@ $conn->close();
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>    
-    <?php include 'sidebar.php';?>
+    <?php include 'dashboardElem/sidebar.php';?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
                     <div id="page-inner">
@@ -110,59 +29,14 @@ $conn->close();
                         </div>              
                         <!-- /. ROW  -->
                         <hr/>
-                        <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-6">           
-                    <div class="panel panel-back noti-box">
-                        <span class="icon-box bg-color-red set-icon">
-                            <i class="fa fa-envelope-o"></i>
-                        </span>
-                        <div class="text-box" >
-                            <p class="main-text">120 New</p>
-                            <p class="text-muted">Messages</p>
-                        </div>
-                    </div>
-                    </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6">           
-                    <div class="panel panel-back noti-box">
-                        <span class="icon-box bg-color-green set-icon">
-                            <i class="fa fa-bars"></i>
-                        </span>
-                        <div class="text-box" >
-                            <p class="main-text">30 Tasks</p>
-                            <p class="text-muted">Remaining</p>
-                        </div>
-                    </div>
-                    </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6">           
-                    <div class="panel panel-back noti-box">
-                        <span class="icon-box bg-color-blue set-icon">
-                            <i class="fa fa-bell-o"></i>
-                        </span>
-                        <div class="text-box" >
-                            <p class="main-text">240 New</p>
-                            <p class="text-muted">Notifications</p>
-                        </div>
-                    </div>
-                    </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6">           
-                    <div class="panel panel-back noti-box">
-                        <span class="icon-box bg-color-brown set-icon">
-                            <i class="fa fa-rocket"></i>
-                        </span>
-                        <div class="text-box" >
-                            <p class="main-text">3 Orders</p>
-                            <p class="text-muted">Pending</p>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
+                        <?php include 'dashboardElem/boxes.php'?>
                         <!-- /. ROW  -->
                         <hr />                
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12">           
                     <div class="panel panel-back noti-box">
                         <span class="icon-box bg-color-blue">
-                            <i class="fa fa-warning"></i>
+                        <i class="fas fa-users-cog"></i>
                         </span>
                         <div class="text-box" >
                             <p class="main-text">52 Important Issues to Fix </p>
@@ -534,3 +408,4 @@ $conn->close();
 
 </body>
 </html>
+<?php $conn->close();?>
