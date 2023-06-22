@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connect.php';
+include '../php-scripts/connect.php';
 
 // logout auto if supervisor is already logged in
 if (isset($_SESSION['matricule_person'])) {
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['matricule_person'] = $supervisor['matricule_person'];
 
         // Redirect to dashboard
-        header("Location: index.php");
+        header("Location: ..\index.php");
         exit();
     } else {
         // Authentication failed, display error message

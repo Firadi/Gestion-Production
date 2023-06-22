@@ -1,31 +1,39 @@
 <div id="wrapper">
-            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
+            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;position: sticky;top: 0;z-index: 99;">
+                <div class="navbar-header ">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="icon-bar">hh</span>
+                        <span class="icon-bar">tr</span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php ">Binary admin</a> 
+                    <a class="navbar-brand" href="/Gestion_production/projet/index.php">GESTIONEUR</a> 
                 </div>
                 <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
                     <?php echo 'Aujourd\'hui : '.date("d / m / Y");?> &nbsp;
-                    <a href="logout.php" class="btn btn-danger square-btn-adjust">Logout</a>
+                    <a href="/Gestion_production/projet/php-scripts/logout.php" class="btn btn-danger square-btn-adjust">Logout</a>
                 </div>
             </nav>   
         <!-- /. NAV TOP  -->
-            <nav class="navbar-default navbar-side" role="navigation">
+            <nav class="navbar-default navbar-side" role="navigation" >
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-                    <li class="text-center">
-                        <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                        <li class="text-center">
+                            <img src="/Gestion_production/projet/assets/img/premo.png" class="user-image img-responsive bg-color-white" alt="User Image" />
                         </li>
                     
                         
                         <li>
-                            <a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a class="active-menu"  href="/Gestion_production/projet/index.php">
+                                <i class="fas fa-home fa-2x"></i>PANNEAU DE CONFIG
+                            </a>
                         </li>
+                        <li>
+                            <a  href="/Gestion_production/projet/pages/affiche_subordonnes.php">
+                                <i class="fas fa-users fa-2x"></i>MY GROUP
+                            </a>
+                        </li>
+                        <!-- 
                         <li>
                             <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
                         </li>
@@ -71,8 +79,9 @@
                         </li>  
                     <li  >
                             <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-                        </li>	
+                        </li>	 -->
                     </ul>
                 
                 </div>
             </nav>  
+<!-- /. NAV SIDE  -->

@@ -10,8 +10,7 @@ if (!isset($_SESSION['matricule_person'])) {
 }
 
 // Function to retrieve personnel hierarchy
-function displayPersonnelHierarchy($personId, $indentation = "")
-{
+function displayPersonnelHierarchy($personId, $indentation = ""){
     global $conn;
 
     // Retrieve person details
@@ -45,8 +44,7 @@ function displayPersonnelHierarchy($personId, $indentation = "")
 }
 
 // Function to get role string based on role number
-function getRoleString($roleNumber)
-{
+function getRoleString($roleNumber){
     switch ($roleNumber) {
         case 1:
             return 'Opérateur';
@@ -58,6 +56,7 @@ function getRoleString($roleNumber)
             return 'Unknown';
     }
 }
+
 // Function to calcule opérateurs
 function calculeOperateur($sv){
 
@@ -80,6 +79,7 @@ function calculeOperateur($sv){
     return $nbr;
 }
 
+// Function to calcule chefs
 function calculeChef($sv){
     global $conn;
 
@@ -97,12 +97,23 @@ $query = "SELECT * FROM person WHERE matricule_person = $supervisorId";
 $result = $conn->query($query);
 $supervisor = $result->fetch_assoc();
 
-// Display the personnel hierarchy for the supervisor
-// echo '<h2>Welcome, ' . $supervisor['nom'] . ' ' . $supervisor['prenom'] . '</h2>';
-// echo '<h3>Your Team</h3>';
-// echo '<ul>';
-// displayPersonnelHierarchy($supervisorId);
-// echo '</ul>';
 
+// Retrieve oprt's details
+$query = 
+"SELECT * FROM person WHERE manager_person = $supervisorId";
+$resultO = $conn->query($query);
 
+$persons = [];
+
+while($chef = $resultO->fetch_assoc()){
+    $persons[] = $chef;
+    $chefMatricule = $chef['matricule_person'];
+    $sql =
+    "SELECT * from person WHERE manager_person = $chefMatricule";
+    $optRslt = $conn->query($sql);
+    while($opt = $optRslt->fetch_assoc()){
+        $persons[] = $opt;
+    }
+
+}
 ?>
