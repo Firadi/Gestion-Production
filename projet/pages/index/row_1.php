@@ -1,7 +1,7 @@
 <div class="row">
     <!--chefs-->   
     <a href="pages\affiche_subordonnes.php">
-        <div class="col-md-3 col-sm-6 col-xs-6">           
+        <div class="col-md-4 col-sm-12 col-xs-4">           
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-primary set-icon">
                     <i class="fas fa-user"></i>
@@ -15,8 +15,8 @@
         </div>
     </a>
     <!--operateurs-->
-    <a href="pages\affiche_subordonnes.php">
-        <div class="col-md-3 col-sm-6 col-xs-6">           
+    <a href="pages\affiche_subordonnes.php" class="unstyle">
+        <div class="col-md-4 col-sm-6 col-xs-4">           
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon">
                     <i class="fas fa-users"></i>
@@ -29,30 +29,18 @@
             </div>
         </div>
     </a>
-    <!--chefs-->
-    <div class="col-md-3 col-sm-6 col-xs-6">           
+    <!--maintenance-->
+    <div class="col-md-4 col-sm-6 col-xs-4">           
         <div class="panel panel-back noti-box">
-            <span class="icon-box bg-color-red set-icon">
-                <i class="fas fa-users"></i>
+            <span class="icon-box bg-color-green set-icon">
+                <i class="fas fa-wrench"></i>
             </span>
             <div class="text-box" >
                 <?php $nbr = calculeOperateur($supervisor['matricule_person']);?>
-                <p class="main-text"><?php echo $nbr;?> opérateurs</p>
+                <p class="main-text"><?php echo $nbr;?> maintenence</p>
                 <p class="text-muted">Messages</p>
             </div>
         </div>
     </div>
-    <!--chefs-->
-    <div class="col-md-3 col-sm-6 col-xs-6">           
-        <div class="panel panel-back noti-box">
-            <span class="icon-box bg-color-red set-icon">
-                <i class="fas fa-users"></i>
-            </span>
-            <div class="text-box" >
-                <?php $nbr = calculeOperateur($supervisor['matricule_person']);?>
-                <p class="main-text"><?php echo $nbr;?> opérateurs</p>
-                <p class="text-muted">Messages</p>
-            </div>
-        </div>
-    </div>
+
 </div>

@@ -3,8 +3,8 @@
                 <div class="navbar-header ">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar">hh</span>
-                        <span class="icon-bar">tr</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/Gestion_production/projet/index.php">GESTIONEUR</a> 
@@ -28,11 +28,36 @@
                                 <i class="fas fa-home fa-2x"></i>PANNEAU DE CONFIG
                             </a>
                         </li>
+                        
                         <li>
                             <a  href="/Gestion_production/projet/pages/affiche_subordonnes.php">
-                                <i class="fas fa-users fa-2x"></i>MY GROUP
+                                <i class="fas fa-users fa-2x"></i>SUBORDONNES<span class="fa arrow"></span>
                             </a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/Gestion_production/projet/pages/affiche_subordonnes.php">liste</a>
+                                </li>
+                                <li>
+                                    <a href="/Gestion_production/projet/pages/ajoute_subordonnes.php">ajouter</a>
+                                </li>
+                            </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-2x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Link</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Link</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Link</a>
+                                </li>
+                            </ul>
+                        </li>  
+                    <li  >
                         <!-- 
                         <li>
                             <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
