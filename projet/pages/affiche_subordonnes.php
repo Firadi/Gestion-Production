@@ -1,4 +1,6 @@
 <?php include '..\php-scripts\getSV.php';?>
+<?php include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\functions.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +73,7 @@
                                             <th>Matricule</th>
                                             <th>Nom</th>
                                             <th>Prenom</th>
-                                            <th>Grade</th>
+                                            <th>Role</th>
                                             <th>Historique</th>
                                             <th style="width:">paramétres</th>
                                         </tr>

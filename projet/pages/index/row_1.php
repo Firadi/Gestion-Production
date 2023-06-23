@@ -7,7 +7,7 @@
                     <i class="fas fa-user"></i>
                 </span>
                 <div class="text-box" >
-                    <?php $nbr = calculeChef($supervisor['matricule_person']);?>
+                    <?php $nbr = calculeChefViaSuperViseur($supervisor['matricule_person']);?>
                     <p class="main-text"><?php echo $nbr;?> chef d'équipe</p>
                     <p class="text-muted">Messages</p>
                 </div>
@@ -22,7 +22,7 @@
                     <i class="fas fa-users"></i>
                 </span>
                 <div class="text-box" >
-                    <?php $nbr = calculeOperateur($supervisor['matricule_person']);?>
+                    <?php $nbr = calculeOperateurViaSuperviseur($supervisor['matricule_person']);?>
                     <p class="main-text"><?php echo $nbr;?> opérateurs</p>
                     <p class="text-muted">Messages</p>
                 </div>
@@ -36,7 +36,7 @@
                 <i class="fas fa-wrench"></i>
             </span>
             <div class="text-box" >
-                <?php $nbr = calculeOperateur($supervisor['matricule_person']);?>
+                <?php $nbr = calculeOperateurViaSuperviseur($supervisor['matricule_person']);?>
                 <p class="main-text"><?php echo $nbr;?> maintenence</p>
                 <p class="text-muted">Messages</p>
             </div>

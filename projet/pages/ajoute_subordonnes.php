@@ -1,4 +1,6 @@
 <?php include '..\php-scripts\getSV.php';?>
+<?php include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\functions.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,41 +26,62 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Ajouter un sub</h2>
+                        <h2>Ajouter un subalterne</h2>
                         <h5>superviseur: khalil afilal</h5>
                     </div>
                 </div>              
                 <!-- /. ROW  -->
                 <hr/>
-                <form action="" method="Post">
+                <form action="\GESTION_PRODUCTION\projet\php-scripts\addSub.php" method="Post">
+                    <!--HIDE DATA-->
+                    <input type="hidden" name="superViseur" value="<?php echo $supervisor['matricule_person']?>">
                     <div class="form-row">
                         <div class="col-md-3"></div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
-                                <label for="inputPassword4">Matricule</label>
-                                <input type="number" min="0" class="form-control" id="inputMatricule" required>
+                                <label for="inputMatricule">Matricule</label>
+                                <input type="number" min="0" class="form-control" id="inputMatricule" name="inputMatricule" required>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="inputNom">Nom</label>
-                                    <input type="email" class="form-control" id="inputNom">
+                                    <input type="text" class="form-control" id="inputNom" name="inputNom" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputPrenom">Prénom</label>
-                                    <input type="email" class="form-control" id="inputPrenom">
+                                    <input type="text" class="form-control" id="inputPrenom" name="inputPrenom" required>
                                 </div>
                             </div>
                             <div class="row">
+                                <!-- SELECT ROLE -->
                                 <div class="form-group col-md-6">
-                                    <label for="inputState">Grade</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Opérateur</option>
-                                        <option>Chef d'équipe</option>
+                                    <label for="inputRole">Role</label>
+                                    <select id="inputRole" name="inputRole" class="form-control" required>
+                                        <option value="1" selected>Opérateur</option>
+                                        <option value="2">Chef d'équipe</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">TEL</label>
-                                    <input type="text" class="form-control" id="inputCity">
+                                <!-- SELECT RESPO -->
+                                <div class="form-group col-md-6" id="managerChef">
+                                    <label for="inputManger">Responsable</label>
+                                    <select id="inputManager" name="inputManager" class="form-control" required>
+                                        <?php
+                                            $resposOperator = getResponsableViaRole(1);
+                                            $resposChef = getResponsableViaRole(2);
+                                        ?>
+                                        <option value="" selected disabled hidden>Choiser un responsable</option>
+                                        <?php foreach ($resposOperator as $respo) : ?>
+                                            <option value="<?php echo $respo['matricule_person']; ?>" data-role="1"><?php echo $respo['prenom'] . ' ' . $respo['nom'] ?></option>
+                                        <?php endforeach; ?>
+                                        <?php foreach ($resposChef as $respo) : ?>
+                                            <option value="<?php echo $respo['matricule_person']; ?>" data-role="2" ><?php echo $respo['prenom'] . ' ' . $respo['nom'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputTel">TEL</label>
+                                    <input type="text" class="form-control" id="inputTel" name="inputTel">
                                 </div>
                             </div>
 
@@ -149,6 +172,7 @@
     <script src="../assets/js/morris/morris.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../assets/js/custom.js"></script>
+    <script src="\GESTION_PRODUCTION\projet\js-scripts\addSub.js"></script>
 </body>
 </html>
 <?php $conn->close();?>

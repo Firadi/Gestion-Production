@@ -1,4 +1,6 @@
 <?php include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\getSV.php';?>
+<?php include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\functions.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -3,7 +3,7 @@ session_start();
 include 'connect.php';
 
 // Check if supervisor is logged in
-if (!isset($_SESSION['matricule_person'])) {
+if (!isset($_SESSION['matricule_sv'])) {
     // Redirect to login page if not logged in
     header("Location: login.php");
     exit();
@@ -43,54 +43,8 @@ function displayPersonnelHierarchy($personId, $indentation = ""){
     }
 }
 
-// Function to get role string based on role number
-function getRoleString($roleNumber){
-    switch ($roleNumber) {
-        case 1:
-            return 'Opérateur';
-        case 2:
-            return 'Chef';
-        case 3:
-            return 'Superviseur';
-        default:
-            return 'Unknown';
-    }
-}
-
-// Function to calcule opérateurs
-function calculeOperateur($sv){
-
-    global $conn;
-
-    $nbr = 0;
-    $sql = "SELECT matricule_person from person WHERE manager_person = $sv";
-    $result = $conn->query($sql);
-
-    while($chef = $result->fetch_assoc()){
-        $chefMatricule = $chef['matricule_person'];
-        $sql =
-        "SELECT matricule_person from person
-            WHERE manager_person = $chefMatricule
-        ";
-        $n = $conn->query($sql);
-
-        $nbr += $n->num_rows;
-    }
-    return $nbr;
-}
-
-// Function to calcule chefs
-function calculeChef($sv){
-    global $conn;
-
-    $sql = "SELECT matricule_person from person WHERE manager_person = $sv";
-    $n = $conn->query($sql);
-    $nbr = $n->num_rows;
-    return $nbr;
-}
-
 // Retrieve supervisor's ID from session
-$supervisorId = $_SESSION['matricule_person'];
+$supervisorId = $_SESSION['matricule_sv'];
 
 // Retrieve supervisor's details
 $query = "SELECT * FROM person WHERE matricule_person = $supervisorId";

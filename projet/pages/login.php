@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows > 0) {
         // Authentication successful, store supervisor ID in session
         $supervisor = $result->fetch_assoc();
-        $_SESSION['matricule_person'] = $supervisor['matricule_person'];
+        $_SESSION['matricule_sv'] = $supervisor['matricule_person'];
 
         // Redirect to dashboard
         header("Location: ..\index.php");
