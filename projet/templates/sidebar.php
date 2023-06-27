@@ -44,20 +44,10 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-2x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Link</a>
-                                </li>
-                            </ul>
-                        </li>  
-                    <li  >
+                            <a class="menu"  href="#">
+                                <i class="fas fa-key fa-2x"></i>PASSWORD ET SECURITE
+                            </a>
+                        </li>
                         <!-- 
                         <li>
                             <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>

@@ -1,6 +1,3 @@
-
-// SELECT ROLE -> SELECT RESPONSABLE
-
 // Get the select elements
 var inputRole = document.getElementById('inputRole');
 var inputManager = document.getElementById('inputManager');

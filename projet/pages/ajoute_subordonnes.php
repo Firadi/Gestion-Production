@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Ajouter un subalterne</h2>
-                        <h5>superviseur: khalil afilal</h5>
+                        <h5>vous: <?php echo $supervisor['prenom'].' '.$supervisor['nom'];?></h5>
                     </div>
                 </div>              
                 <!-- /. ROW  -->
@@ -97,48 +97,16 @@
                                             <h4 class="modal-title" id="myModalLabel">Confirmer L'ajoute</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <table class="table">
-                                                <tr>
-                                                    <td colspan="2"><strong>Matricule :</strong></td>
-                                                    <td colspan="2">1009</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Prenom :</strong></td>
-                                                    <td>Badr</td>
-                                                    <td><strong>Nom :</strong></td>
-                                                    <td>Firadi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Grade :</strong></td>
-                                                    <td>Chef d'équipe</td>
-                                                    <td><strong>TEL :</strong></td>
-                                                    <td>070654398</td>
-                                                </tr>
-                                                <tr></tr>
-                                            </table>
+                                            Êtes-vous sûr d'ajouter un nouveau subordonné ?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
-                                                Sauvgarder
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                                Annuler
                                             </button>
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                            <h4 class="modal-title" id="myModalLabel">Modal title Here</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+                                                Confirmer
+                                            </button>
+                                        </div>
 
                                             
                                         </div>
