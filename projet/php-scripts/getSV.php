@@ -5,7 +5,7 @@ include 'connect.php';
 // Check if supervisor is logged in
 if (!isset($_SESSION['matricule_sv'])) {
     // Redirect to login page if not logged in
-    header("Location: login.php");
+    header("Location: /GESTION_PRODUCTION/projet/pages/login.php");
     exit();
 }
 
