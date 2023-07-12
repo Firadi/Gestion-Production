@@ -1,21 +1,11 @@
 <div id="wrapper">
-            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;position: sticky;top: 0;z-index: 99;">
-                <div class="navbar-header ">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/Gestion_production/projet/index.php">GESTIONEUR</a> 
-                </div>
+            <!-- <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;position: sticky;top: 0;z-index: 99;">
                 <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
                     <?php echo 'Aujourd\'hui : '.date("d / m / Y");?> &nbsp;
-                    <a href="/Gestion_production/projet/php-scripts/logout.php" class="btn btn-danger square-btn-adjust">Logout</a>
                 </div>
-            </nav>   
+            </nav>    -->
         <!-- /. NAV TOP  -->
-            <nav class="navbar-default navbar-side" role="navigation" >
+            <nav class="navbar-default navbar-side " role="navigation" >
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li class="text-center">
@@ -24,7 +14,7 @@
                     
                         
                         <li>
-                            <a class="active-menu"  href="/Gestion_production/projet/index.php">
+                            <a class=""  href="/Gestion_production/projet/index.php">
                                 <i class="fas fa-home fa-2x"></i>PANNEAU DE CONFIG
                             </a>
                         </li>
@@ -44,8 +34,20 @@
                         </li>
 
                         <li>
+                            <a class=""  href="\GESTION_PRODUCTION\projet\pages\checklist.php">
+                            <i class="fas fa-clipboard-list fa-2x"></i>CHECK LISTS
+                            </a>
+                        </li>
+
+                        <li>
                             <a class="menu"  href="#">
                                 <i class="fas fa-key fa-2x"></i>PASSWORD ET SECURITE
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/Gestion_production/projet/php-scripts/logout.php" class="">
+                                <i class="fas fa-door-open fa-2x"></i>Logout
                             </a>
                         </li>
                         <!-- 
@@ -98,5 +100,6 @@
                     </ul>
                 
                 </div>
+
             </nav>  
 <!-- /. NAV SIDE  -->

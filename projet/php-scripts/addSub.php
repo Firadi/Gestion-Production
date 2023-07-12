@@ -30,8 +30,10 @@
         echo 'prenom: '.$_POST['inputPrenom'].'<br>';
         echo 'nom: '.$_POST['inputNom'].'<br>';
         echo 'Role: '.$_POST['inputRole'].'<br>';
-        echo 'Manger: '.$_POST['inputManager'].'<br>'; 
-        header();
+        echo 'Manger: '.$_POST['inputManager'].'<br>';
+        echo 'attend...';
+        header( "Refresh:5; url='\GESTION_PRODUCTION\projet\pages\ajoute_subordonnes.php' ");
+        exit();
     }
     else{
         echo 'error';

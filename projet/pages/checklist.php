@@ -35,29 +35,51 @@
                 <hr/>
 
                 <div class="form-group">
-                    <p class="col-md-1">filtre</p>
                     <div class="row">
-                        <div class="col-md-2 mb-3">
-                            <label>nom</label>
+                        <div class="col-md-2 mb-2">
+                            <label>Code</label>
                             <input class="form-control" placeholder="Please Enter Keyword">
                         </div>
-                        <div class="col-md-2 mb-3">
-                            <label>prenom</label>
+                        <div class="col-md-2 mb-2">
+                            <label>OF</label>
                             <input class="form-control" placeholder="Please Enter Keyword">
                         </div>
-                        <div class="col-md-2 mb-3">
-                            <label>matricule</label>
-                            <input type="number" min="0" class="form-control" id="matriculeInput" placeholder="Matricule">
-                        </div>
-                        <div class="col-md-2 mb-3">
+                        
+                        <div class="col-md-2 mb-2">
                             <div class="form-group">
-                                <label>Grade</label>
+                                <label>Responsable</label>
                                 <select class="form-control" id="selectRole">
-                                    <option value="0" selected>Tous</option>
-                                    <option value="1">opérateur</option>
-                                    <option value="2">chef d'équipe</option>
+                                    <option value="">tout</option>
+                                    <option value="">karim filali 1009</option>
+                                    <option value="">prénom nom matricule</option>
+                                    <option value="">karim filali 1009</option>
+                                    <option value="">prénom nom matricule</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <div class="form-group">
+                                <label>Shift</label>
+                                <select class="form-control" id="selectRole">
+                                    <option value="">tout</option>
+                                    <option value="">matin</option>
+                                    <option value="">soir</option>
+                                    <option value="">nuit</option>                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <div class="form-group">
+                                <label>Etat</label>
+                                <select class="form-control" id="selectRole">
+                                    <option value="">tout</option>
+                                    <option value="">OK</option>
+                                    <option value="">NOK</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label>Date</label>
+                            <input type="date" class="form-control" placeholder="Please Enter Keyword">
                         </div>
                     </div>
                 </div>
@@ -75,21 +97,21 @@
                                         <thead>
                                             <tr>
                                                 <th>Code</th>
-                                                <th>Ligne</th>
-                                                <th>Date</th>
-                                                <th>Shift</th>
                                                 <th>Responsable</th>
+                                                <th>Date</th>
+                                                <th>Ligne</th>
+                                                <th>Shift</th>
                                                 <th>Etat</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test</td>
-                                                <td>test</td>
-                                                <td>test</td>
-                                                <td>test</td>
-                                                <td>test</td>
-                                                <td>test</td>
+                                                <td>039R3</td>
+                                                <td>Madiha</td>
+                                                <td>05/06/2023</td>
+                                                <td>1</td>
+                                                <td>nuit</td>
+                                                <td>OK</td>
                                             </tr>
                                         </tbody>
                                     </table>

@@ -38,53 +38,47 @@
 
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading d-flex justify-content-between align-items-center">
-                            <div>
-                                <h3 class="panel-title">post 1</h3>
-                            </div>
-                            <div class="text-right">
-                                <label for="matricule">Matricule</label>
-                                <input type="number" min="0" id="matricule">
-                            </div>
-                        </div>
-                    
-                    <div class="panel-body">
-                        <div class="">
-                            <table class="table table-striped table-bordered table-fixed" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th class="overflow-auto">parametre</th>
-                                        <th class="text-success">Min</th>
-                                        <th class="text-danger">Max</th>
-                                        <th class="">valeur</th>
-                                        <th class="">ok</th>
-                                        <th class="">nok</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="overflow-auto">Lorem sed atque, sapiente cupiditate in mindiandae earum sunt, quaerat ullam.</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td><input type="number" min="0" step="0.1" name="" id=""></td>
-                                        <td><input type="checkbox" name="" id=""></td>
-                                        <td><input type="checkbox" name="" id=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="overflow-auto">test</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td><input type="number" min="0" step="0.1" name="" id=""></td>
-                                        <td><input type="checkbox" name="" id=""></td>
-                                        <td><input type="checkbox" name="" id=""></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <input type="submit" value="submit" class="btn btn-success">
+                    <div class="text-right">
+                        <label for="matricule">Matricule</label>
+                        <input type="number" min="0" id="matricule">
                     </div>
-                </div>
+                    
+                            <div class="">
+                                <table class="table table-striped table-bordered table-fixed" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th class="overflow-auto">parametre</th>
+                                            <th class="text-success">Min</th>
+                                            <th class="text-danger">Max</th>
+                                            <th class="">valeur</th>
+                                            <th class="">ok</th>
+                                            <th class="">nok</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="overflow-auto">Lorem sed atque, sapiente cupiditate in mindiandae earum sunt, quaerat ullam.</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td><input type="number" min="0" step="0.1" name="" id=""></td>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="overflow-auto">test</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td><input type="number" min="0" step="0.1" name="" id=""></td>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                            <td><input type="checkbox" name="" id=""></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input type="submit" value="submit" class="btn btn-success">
+
+                    
+
             </div>                  
         
         <!-- /. WRAPPER  -->

@@ -21,7 +21,7 @@
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
-    <body>    
+    <body>
         <?php include '..\templates\sidebar.php';?>
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper">
@@ -31,9 +31,10 @@
                         <h2 class="text-center"><strong>MON GROUP</strong></h2>  
                             <h5></h5>
                     </div>
-                </div>   
+                </div>
+                
                 <hr/>
-
+                <?php include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\alert.php';?>
                 <div class="form-group">
                     <p class="col-md-1">filtre</p>
                     <div class="row">
@@ -78,8 +79,8 @@
                                                 <th>Nom</th>
                                                 <th>Prenom</th>
                                                 <th>Role</th>
-                                                <th>Historique</th>
-                                                <th>paramétres</th>
+                                                <th style="width: 120px;">paramétres</th>
+                                                <th style="width: 120px;">Profile</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -90,16 +91,39 @@
                                                     <td><?php echo $person['prenom']?></td>
                                                     <td class="center role" data-role="<?php echo $person['role_person'];?>"><?php echo getRoleString($person['role_person']);?></td>
                                                     <td class="center text-center">
-                                                        <a href="#" class="btn btn-primary btn-sm">voir..</a>
+                                                        <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                                        
+                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $person['matricule_person']?>">
+                                                            <i class="fas fa-user-times"></i>
+                                                        </button>
+                                                        <div class="modal fade" id="myModal<?php echo $person['matricule_person']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                        <h4 class="modal-title" id="myModalLabel">Confirmer la suppression</h4>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Êtes-vous sûr de supprimer le subordonné ?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                                                            Annuler
+                                                                        </button>
+                                                                        <a class="btn btn-danger" href="/GESTION_PRODUCTION/projet/php-scripts/personCRUD.php?person-delete=<?php echo $person['matricule_person']?>">
+                                                                            Supprimer <i class="fas fa-user-times"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                     <td class="center text-center">
-                                                        <button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
-                                                        <button class="btn btn-danger">
-                                                            <i class="fa fa-pencil"></i>Supprimer
-                                                        </button>
+                                                        <a href="#" class="btn btn-primary btn-sm">voir..</a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach;?>
+
                                         </tbody>
                                     </table>
                                 </div>

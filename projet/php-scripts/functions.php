@@ -88,4 +88,23 @@ function calculeOperateurViaSuperviseur($sv){
     }
     return $nbr;
 }
+
+// Supression d'un person
+
+function removePersonViaMatricule($matricule){
+    global $conn;
+
+    //
+    if ($matricule === -1) { return; }
+    //
+    $sql = 
+        "DELETE  from person WHERE matricule_person = $matricule";
+    if( $conn->query($sql) ){
+        echo "suppression Done";
+    }
+    else{
+        echo $conn->error;
+    };
+}
+
 ?>
