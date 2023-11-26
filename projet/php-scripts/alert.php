@@ -4,10 +4,6 @@
             $type = $_GET['alertType'];
             $url = $_SERVER['PHP_SELF'];
             echo "<div class=\"alert $type alert-dismissable\">
-                <a type=\"button\" class=\"close\" href=\"$url\"><i class=\"fas fa-times fa-sm\"></i></a>
-                $alert
-            </div>";
-            // header("location:".$_SERVER['PHP_SELF']);
-            // exit();
+                    <a type=\"button\" class=\"close\" href=\"$url\"><i class=\"fas fa-times fa-sm\"></i></a>$alert</div>";
         }
     ?>

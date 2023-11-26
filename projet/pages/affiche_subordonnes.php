@@ -38,14 +38,14 @@
                 <div class="form-group">
                     <p class="col-md-1">filtre</p>
                     <div class="row">
-                        <div class="col-md-2 mb-3">
+                        <!-- <div class="col-md-2 mb-3">
                             <label>nom</label>
                             <input class="form-control" placeholder="Please Enter Keyword">
                         </div>
                         <div class="col-md-2 mb-3">
                             <label>prenom</label>
                             <input class="form-control" placeholder="Please Enter Keyword">
-                        </div>
+                        </div> -->
                         <div class="col-md-2 mb-3">
                             <label>matricule</label>
                             <input type="number" min="0" class="form-control" id="matriculeInput" placeholder="Matricule">
@@ -80,7 +80,7 @@
                                                 <th>Prenom</th>
                                                 <th>Role</th>
                                                 <th style="width: 120px;">paramétres</th>
-                                                <th style="width: 120px;">Profile</th>
+                                                <!-- <th style="width: 120px;">Profile</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -91,7 +91,9 @@
                                                     <td><?php echo $person['prenom']?></td>
                                                     <td class="center role" data-role="<?php echo $person['role_person'];?>"><?php echo getRoleString($person['role_person']);?></td>
                                                     <td class="center text-center">
-                                                        <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-primary edit-button" data-matricule="<?php echo $person['matricule_person']; ?>">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
                                                         
                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $person['matricule_person']?>">
                                                             <i class="fas fa-user-times"></i>
@@ -118,9 +120,9 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="center text-center">
+                                                    <!-- <td class="center text-center">
                                                         <a href="#" class="btn btn-primary btn-sm">voir..</a>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             <?php endforeach;?>
 
@@ -148,7 +150,8 @@
         <!-- CUSTOM SCRIPTS -->
         <script src="../assets/js/custom.js"></script>
         <script src="../js-scripts/filter.js"></script>
-        
+        <script src="../js-scripts/editerSub.js"></script>
+
 
     </body>
     </html>

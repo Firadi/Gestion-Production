@@ -90,7 +90,6 @@ function calculeOperateurViaSuperviseur($sv){
 }
 
 // Supression d'un person
-
 function removePersonViaMatricule($matricule){
     global $conn;
 
@@ -101,10 +100,15 @@ function removePersonViaMatricule($matricule){
         "DELETE  from person WHERE matricule_person = $matricule";
     if( $conn->query($sql) ){
         echo "suppression Done";
+        return true;
     }
     else{
         echo $conn->error;
+        return false;
     };
 }
 
+//
+function getParametresViaPost($postId){}
+    global $conn;
 ?>

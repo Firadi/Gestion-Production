@@ -112,38 +112,38 @@ background-color: #B94A00;
 color: #fff;
 }
 
-
- .icon-box-right {
-display: block;
-float: right;
-margin: 0 15px 10px 0;
-width: 70px;
-height: 70px;
-line-height: 75px;
-vertical-align: middle;
-text-align: center;
-font-size: 40px;
+.icon-box-right {
+    display: block;
+    float: right;
+    margin: 0 15px 10px 0;
+    width: 70px;
+    height: 70px;
+    line-height: 75px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 40px;
 }
 
- .main-temp-back {
-background: #8702A8;
-color: #FFFFFF;
-font-size: 16px;
-font-weight: 300;
-text-align: center;
+.main-temp-back {
+    background: #4f02a8;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    min-height: 100px;
 }
- .main-temp-back .text-temp {
-font-size: 22px;
+.main-temp-back .text-temp {
+    font-size: 22px;
 }
 .back-dash {
     padding:20px;
     font-size:20px;
     font-weight:500;
-      -webkit-border-radius: 0px;
--moz-border-radius: 0px;
-border-radius: 0px;
-background-color:#2EA7EB;
-color:#fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color:#2EA7EB;
+    color:#fff;
 }
     .back-dash p {
         padding-top:16px;
@@ -366,7 +366,7 @@ line-height: 1.428571429;
 
 @media(min-width:768px) {
 #page-wrapper{
-        margin: 0 0 0 260px;
+    margin: 0 0 0 260px;
     padding: 15px 30px;
     min-height: 1200px;
     

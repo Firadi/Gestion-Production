@@ -4,8 +4,7 @@
 
     if (!isset($_GET['person-delete'])) {
         $matricule = -1;
-        $alert = "Error de suppression";
-        $type = "alert-danger";
+        
     }
     else if (isset($_GET['person-delete'])) {
         $matricule = $_GET['person-delete'];
@@ -13,10 +12,16 @@
         $nomPrenom = $conn->query($sql);
         $nomPrenom = $nomPrenom->fetch_assoc();
         $nomPrenom = $nomPrenom['prenom'].' '.$nomPrenom['nom'];
-        removePersonViaMatricule($matricule);
-        $alert = "Vous avez supprimez <strong> $nomPrenom </strong> avec success";
-        $type = "alert-success";
+        if (removePersonViaMatricule($matricule)) {
+            $alert = "Vous avez supprimez <strong> $nomPrenom </strong> avec success";
+            $type = "alert-success";
+        }
+        else {
+            $alert = "Error de suppression <strong> $nomPrenom </strong>";
+            $type = "alert-danger";
+        }
     }
+
     header("location: \GESTION_PRODUCTION\projet\pages\affiche_subordonnes.php?alert=$alert&&alertType=$type");
     exit();    
     

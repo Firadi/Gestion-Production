@@ -40,7 +40,7 @@
                         </li>
 
                         <li>
-                            <a class="menu"  href="#">
+                            <a class="menu"  href="\GESTION_PRODUCTION\projet\pages\changePassword.php">
                                 <i class="fas fa-key fa-2x"></i>PASSWORD ET SECURITE
                             </a>
                         </li>

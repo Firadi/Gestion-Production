@@ -9,7 +9,7 @@
                 <div class="text-box" >
                     <?php $nbr = calculeChefViaSuperViseur($supervisor['matricule_person']);?>
                     <p class="main-text"><?php echo $nbr;?> chef d'équipe</p>
-                    <p class="text-muted">Messages</p>
+                    <p class="text-muted">clicker pour voir la liste</p>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="text-box" >
                     <?php $nbr = calculeOperateurViaSuperviseur($supervisor['matricule_person']);?>
                     <p class="main-text"><?php echo $nbr;?> opérateurs</p>
-                    <p class="text-muted">Messages</p>
+                    <p class="text-muted">clicker pour voir la liste</p>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="text-box" >
                 <?php $nbr = calculeOperateurViaSuperviseur($supervisor['matricule_person']);?>
                 <p class="main-text"><?php echo $nbr;?> maintenence</p>
-                <p class="text-muted">Messages</p>
+                <p class="text-muted">clicker pour voir la liste</p>
             </div>
         </div>
     </div>

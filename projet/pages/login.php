@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         // Authentication failed, display error message
-        $error = "Invalid credentials. Please try again.";
+        $error = "Matricule ou Password incorrect";
     }
 }
 ?>

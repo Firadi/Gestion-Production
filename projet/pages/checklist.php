@@ -1,6 +1,7 @@
 <?php
         include '..\php-scripts\getSV.php';
         include 'C:\xampp\htdocs\GESTION_PRODUCTION\projet\php-scripts\functions.php';
+        include '../php-scripts/getChecklists.php';
     ?>
 
 
@@ -89,7 +90,7 @@
                         <!-- Advanced Tables -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                group liste
+                                Checklists
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -97,22 +98,26 @@
                                         <thead>
                                             <tr>
                                                 <th>Code</th>
+                                                <th>Ligne</th>
+                                                <th>OF</th>
                                                 <th>Responsable</th>
                                                 <th>Date</th>
-                                                <th>Ligne</th>
                                                 <th>Shift</th>
                                                 <th>Etat</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>039R3</td>
-                                                <td>Madiha</td>
-                                                <td>05/06/2023</td>
-                                                <td>1</td>
-                                                <td>nuit</td>
-                                                <td>OK</td>
-                                            </tr>
+                                            <?php foreach($checklists as $checklist):?>
+                                                <tr>
+                                                    <td><?php echo $checklist['code']?></td>
+                                                    <td>1</td>
+                                                    <td><?php echo $checklist['of']?></td>
+                                                    <td><?php echo $checklist['responsable']?></td>
+                                                    <td><?php echo $checklist['date']?></td>
+                                                    <td><?php echo $checklist['shift']?></td>
+                                                    <td style="text-align: center;"><span class="label label-success">OK</span></td>
+                                                </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>
